@@ -1,5 +1,5 @@
 # Dockerfile for clamav service
-FROM alpine:3.13
+FROM alpine:3.8
 # python3 shared with most images
 RUN apk add --no-cache \
     python3 py3-pip \
@@ -20,4 +20,4 @@ ADD ${HEALTH_CON} /health.sh
 ADD ${SCAN_CON} /scan.sh
 RUN chmod +x /health.sh /scan.sh
 
-CMD ["python3", "/start.py"]
+CMD /start.py

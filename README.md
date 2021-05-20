@@ -8,6 +8,14 @@ This repository holds the content submitted to the
 Markdown files added to the [`tutorials` folder](https://github.com/GoogleCloudPlatform/community/tree/master/tutorials) are published at
 [cloud.google.com/community/tutorials](https://cloud.google.com/community/tutorials/).
 
+Local:
+docker build -f Dockerfile --build-arg START_CON=https://raw.githubusercontent.com/Tom284/community/master/gcp-cos-clamav/start.py --build-arg HEALTH_CON=https://raw.githubusercontent.com/Tom284/community/master/gcp-cos-clamav/health.sh --build-arg SCAN_CON=https://raw.githubusercontent.com/Tom284/community/master/gcp-cos-clamav/scan.sh 
+--build-arg CONF_CON=https://github.com/Tom284/community/tree/test/gcp-cos-clamav/conf -t hellofour .
+
+online:
+docker build https://raw.githubusercontent.com/Tom284/community/master/gcp-cos-clamav/Dockerfile --build-arg START_CON=https://raw.githubusercontent.com/Tom284/community/master/gcp-cos-clamav/start.py --build-arg HEALTH_CON=https://raw.githubusercontent.com/Tom284/community/master/gcp-cos-clamav/health.sh --build-arg SCAN_CON=https://raw.githubusercontent.com/Tom284/community/master/gcp-cos-clamav/scan.sh 
+--build-arg CONF_CON=https://github.com/Tom284/community/tree/test/gcp-cos-clamav/conf -t hellotwo
+
 ## Contributing
 
 For instructions on contributing a tutorial, see

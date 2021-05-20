@@ -5,7 +5,9 @@ RUN apk add --no-cache \
     python3 py3-pip \
   && pip3 install --upgrade pip
 # Image specific layers under this line
-RUN apk update && apk add pv clamav=0.103.2-r0 clamav-libunrar unrar && apk add --upgrade openssl && apk add --no-cache ca-certificates
+RUN apk add --no-cache clamav rsyslog wget clamav-libunrar
+RUN mkdir -p /logs /data
+RUN echo `date`: File created >> /logs/clamscan.log
 
 ARG START_CON
 ARG HEALTH_CON

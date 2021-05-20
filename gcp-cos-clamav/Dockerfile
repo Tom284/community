@@ -20,4 +20,4 @@ ADD ${HEALTH_CON} /health.sh
 ADD ${SCAN_CON} /scan.sh
 RUN chmod +x /health.sh /scan.sh
 
-CMD /start.py
+ENTRYPOINT ["python3", "/start.py"]

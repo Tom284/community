@@ -11,9 +11,9 @@ ARG START_CON
 ARG HEALTH_CON
 ARG SCAN_CON
 
-COPY ${START_CON} /start.py
-COPY ${HEALTH_CON} /health.sh
-COPY ${SCAN_CON} /scan.sh
+ADD ${START_CON} /start.py
+ADD ${HEALTH_CON} /health.sh
+ADD ${SCAN_CON} /scan.sh
 RUN chmod +x /health.sh /scan.sh
 
 CMD ["python3", "/start.py"]
